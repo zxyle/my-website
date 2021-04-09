@@ -13,6 +13,7 @@ jobs:
 
       - name: Build static files
         run: |
+          npm install
           npm run build
 
       - name: Deploy to Tencent CloudBase
