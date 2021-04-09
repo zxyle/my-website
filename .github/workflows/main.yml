@@ -1,0 +1,25 @@
+name: Deploy Action
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+
+      - name: Build static files
+        run: |
+          npm run build
+
+      - name: Deploy to Tencent CloudBase
+        uses: TencentCloudBase/cloudbase-action@v2
+        with:
+          secretId: ${{secrets.secretId}}
+          secretKey: ${{secrets.secretKey}}
+          envId: ${{secrets.envId}}
+        run: |
+          cloudbase hosting:deploy build cloudPath -e ${{ secrets.envId }}
