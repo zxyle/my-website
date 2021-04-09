@@ -21,5 +21,7 @@ jobs:
           secretId: ${{secrets.secretId}}
           secretKey: ${{secrets.secretKey}}
           envId: ${{secrets.envId}}
+      
+      - name: Deploy
         run: |
           cloudbase hosting:deploy build cloudPath -e ${{ secrets.envId }}
