@@ -6,7 +6,7 @@ tags: [hola, docusaurus]
 
 
 ## 介绍
-使用oracle提供的mysql bundle安装包进行安装
+使用oracle提供的mysql bundle安装包进行安装.
 
 
 
