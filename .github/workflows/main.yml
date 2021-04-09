@@ -27,4 +27,8 @@ jobs:
       
       - name: Deploy
         run: |
-          cloudbase hosting:deploy build cloudPath -e ${{ secrets.envId }}
+          npm i -g @cloudbase/cli
+          tcb -v
+          tcb login --apiKeyId ${{secrets.secretId}} --apiKey ${{secrets.secretKey}}
+          tcb hosting deploy build -e ${{ secrets.envId }}
+          # cloudbase hosting:deploy build cloudPath -e ${{ secrets.envId }}
