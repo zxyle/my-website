@@ -1,6 +1,5 @@
 ---
 title: CentOS 安装MySQL
-tags: [hola, docusaurus]
 ---
 
 
